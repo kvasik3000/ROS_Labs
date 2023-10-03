@@ -1,4 +1,4 @@
-from full_name_service.srv import FullNameService
+from full_name_interface.srv import FullNameService
 
 import rclpy
 from rclpy.node import Node
@@ -11,8 +11,8 @@ class MinimalService(Node):
         self.srv = self.create_service(FullNameService, 'full_name', self.full_name_callback)
 
     def full_name_callback(self, request, response):
-        response.sent = request.a + ' ' + request.b + ' ' + request.c
-        self.get_logger().info('Incoming request\na: %d b: %d c: %d' % (request.a, request.b, request.c))
+        response.full_name = request.last_name + ' ' + request.name + ' ' + request.first_name
+        self.get_logger().info('Incoming request\nlast name: %s name: %s first name: %s' % (request.last_name, request.name, request.first_name))
 
         return response
 
