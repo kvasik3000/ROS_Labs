@@ -15,8 +15,8 @@ class DynamicFrameBroadcaster(Node):
         self.timer = self.create_timer(0.1, self.broadcast_timer_callback)
 
         # Добавляем параметры радиуса и направления вращения
-        self.declare_parameter('radius', 10.0)  # Значение по умолчанию 10.0
-        self.declare_parameter('direction_of_rotation', 1)  # Значение по умолчанию 1
+        self.declare_parameter('radius')  
+        self.declare_parameter('direction_of_rotation')  
 
     def broadcast_timer_callback(self):
         seconds, _ = self.get_clock().now().seconds_nanoseconds()
@@ -29,8 +29,8 @@ class DynamicFrameBroadcaster(Node):
         t.header.stamp = self.get_clock().now().to_msg()
         t.header.frame_id = 'turtle1'
         t.child_frame_id = 'carrot1'
-        t.transform.translation.x = radius * math.sin(seconds) * direction_of_rotation
-        t.transform.translation.y = radius * math.cos(seconds) * direction_of_rotation
+        t.transform.translation.x = radius * math.sin(seconds * direction_of_rotation) 
+        t.transform.translation.y = radius * math.cos(seconds * direction_of_rotation)
         t.transform.translation.z = 0.0
         t.transform.rotation.x = 0.0
         t.transform.rotation.y = 0.0
@@ -48,4 +48,3 @@ def main():
         pass
 
     rclpy.shutdown()
-
