@@ -17,12 +17,12 @@ class MessageTurtleActionClient(Node):
         for com, num in order:
             goal_msg.command = com
             
-            if com != "forward":
-                goal_msg.s = 0
-                goal_msg.angle = num
-            else:
+            if com == "forward":
                 goal_msg.s = num
                 goal_msg.angle = 0
+            else:
+                goal_msg.s = 0
+                goal_msg.angle = num
 
             self._action_client.wait_for_server()
             self._send_goal_future = self._action_client.send_goal_async(goal_msg)

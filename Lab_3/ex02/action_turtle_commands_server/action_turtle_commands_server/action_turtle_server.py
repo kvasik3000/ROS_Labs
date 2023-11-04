@@ -39,14 +39,17 @@ class MessageTurtleActionServer(Node):
                 feedback_msg.odom += 1
                 message.linear.x += 1.0
                 self.publisher_.publish(message)
+                time.sleep(1)
                 self.get_logger().info('Feedback: {0} meters'.format(feedback_msg.odom))
                 goal_handle.publish_feedback(feedback_msg)
+                message.linear.x -= 1.0
                 time.sleep(1)
         if command == "turn_right":
             # Если команда "turn_right", поворачиваем направо
             self.get_logger().info('Goal: turn right, {0} degrees'.format(goal_handle.request.angle))
             message.angular.z = - angle * np.pi / 180.0  # Преобразование градусов в радианы
             self.publisher_.publish(message)
+            time.sleep(1)
             self.get_logger().info('Feedback: {0} meters'.format(feedback_msg.odom))
             goal_handle.publish_feedback(feedback_msg)
             time.sleep(1)
