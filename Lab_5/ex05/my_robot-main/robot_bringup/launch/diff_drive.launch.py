@@ -114,7 +114,7 @@ def generate_launch_description():
         bridge,
         robot_state_publisher,
         rviz,
-        robot_walking,
+        unique_robot_walking,
         TimerAction(
             period=5.0,
             actions=[create])

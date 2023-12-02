@@ -14,7 +14,7 @@
     <xacro:property name="flower_disk_height" value="0.05"/>
     <xacro:property name="petal_radius" value="0.2"/>
     <xacro:property name="petal_height" value="0.05"/>
-    <xacro:property name="wheel_radius" value="0.0495"/>
+    <xacro:property name="wheel_radius" value="0.1"/>
     <xacro:property name="wheel_thickness" value="0.039"/>
     <xacro:property name="wheel_mass" value="0.075"/>
     <xacro:property name="wheel_offset_x" value="0.35"/>
@@ -253,14 +253,6 @@
             <cylinder radius="${stem_radius}" length="${stem_height}"/>
         </geometry>
     </collision>
-    <inertial>
-        <!-- Параметры инерции для stem -->
-        <origin xyz="0 0 0.05" rpy="0 0 0"/>
-        <mass value="${mass}" />
-        <inertia ixx="1e-6" ixy="0.0" ixz="0.0"
-                 iyy="1e-6" iyz="0.0"
-                 izz="1e-6" />
-    </inertial>
     </link>
     
     <gazebo reference="stem">
@@ -285,15 +277,6 @@
             <cylinder radius="${flower_disk_radius}" length="${flower_disk_height}"/>
         </geometry>
     </collision>
-    <inertial>
-        <!-- Параметры инерции для stem -->
-        <origin xyz="0 0 0.05" rpy="0 0 0"/>
-        <mass value="${mass}" />
-        <inertia ixx="1e-6" ixy="0.0" ixz="0.0"
-                 iyy="1e-6" iyz="0.0"
-                 izz="1e-6" />
-                 
-    </inertial>
     </link>
     
     <gazebo reference="flower_disk">
@@ -305,30 +288,22 @@
     	<parent link="flower_disk"/>
     	<child link="petal_one"/>
     	<axis xyz="0 0 1"/>
- 	<origin rpy="0 -0.3 0" xyz="0.4 0 0.05"/>
+ 	<origin rpy="0 -0.4 0" xyz="0.4 0 0.08"/>
     	
     </joint>
         
     <link name="petal_one">
     <visual>
         <geometry>
-            <cylinder radius="${petal_radius}" length="${petal_height}"/> <!-- Измените параметры, если необходимо -->
+            <cylinder radius="${petal_radius}" length="${petal_height/4}"/> <!-- Измените параметры, если необходимо -->
         </geometry>
         <material name="white"/>
     </visual>
     <collision>
         <geometry>
-            <cylinder radius="${petal_radius}" length="${petal_height}"/>
+            <cylinder radius="${petal_radius}" length="${petal_height/4}"/>
         </geometry>
     </collision>
-    <inertial>
-        <!-- Параметры инерции для stem -->
-        <origin xyz="0 0 0.05" rpy="0 0 0"/>
-        <mass value="0" />
-        <inertia ixx="1e-6" ixy="0.0" ixz="0.0"
-                 iyy="1e-6" iyz="0.0"
-                 izz="1e-6" />
-    </inertial>
     </link>
     
     <gazebo reference="petal_one">
@@ -340,30 +315,22 @@
     	<parent link="flower_disk"/>
     	<child link="petal_two"/>
     	<axis xyz="0 0 1"/>
- 	<origin rpy="0 0.3 0" xyz="-0.4 0 0.05"/>
+ 	<origin rpy="0 0.4 0" xyz="-0.4 0 0.08"/>
     	
     </joint>
         
     <link name="petal_two">
     <visual>
         <geometry>
-            <cylinder radius="${petal_radius}" length="${petal_height}"/> <!-- Измените параметры, если необходимо -->
+            <cylinder radius="${petal_radius}" length="${petal_height/4}"/> <!-- Измените параметры, если необходимо -->
         </geometry>
         <material name="white"/>
     </visual>
     <collision>
         <geometry>
-            <cylinder radius="${petal_radius}" length="${petal_height}"/>
+            <cylinder radius="${petal_radius}" length="${petal_height/4}"/>
         </geometry>
     </collision>
-    <inertial>
-        <!-- Параметры инерции для stem -->
-        <origin xyz="0 0 0.05" rpy="0 0 0"/>
-        <mass value="0" />
-        <inertia ixx="1e-6" ixy="0.0" ixz="0.0"
-                 iyy="1e-6" iyz="0.0"
-                 izz="1e-6" />
-    </inertial>
     </link>
     
     <gazebo reference="petal_two">
@@ -375,30 +342,22 @@
     	<parent link="flower_disk"/>
     	<child link="petal_three"/>
     	<axis xyz="0 0 1"/>
- 	<origin rpy="0.3 0 0" xyz="0 0.4 0.05"/>
+ 	<origin rpy="0.4 0 0" xyz="0 0.4 0.08"/>
     	
     </joint>
         
     <link name="petal_three">
     <visual>
         <geometry>
-            <cylinder radius="${petal_radius}" length="${petal_height}"/> <!-- Измените параметры, если необходимо -->
+            <cylinder radius="${petal_radius}" length="${petal_height/4}"/> <!-- Измените параметры, если необходимо -->
         </geometry>
         <material name="white"/>
     </visual>
     <collision>
         <geometry>
-            <cylinder radius="${petal_radius}" length="${petal_height}"/>
+            <cylinder radius="${petal_radius}" length="${petal_height/4}"/>
         </geometry>
     </collision>
-    <inertial>
-        <!-- Параметры инерции для stem -->
-        <origin xyz="0 0 0.05" rpy="0 0 0"/>
-        <mass value="0" />
-        <inertia ixx="1e-6" ixy="0.0" ixz="0.0"
-                 iyy="1e-6" iyz="0.0"
-                 izz="1e-6" />
-    </inertial>
     </link>
     
     <gazebo reference="petal_three">
@@ -410,30 +369,22 @@
     	<parent link="flower_disk"/>
     	<child link="petal_four"/>
     	<axis xyz="0 0 1"/>
- 	<origin rpy="0.2 -0.2 0" xyz="0.3 0.3 0.05"/>
+ 	<origin rpy="0.3 -0.3 0" xyz="0.3 0.3 0.08"/>
     	
     </joint>
         
     <link name="petal_four">
     <visual>
         <geometry>
-            <cylinder radius="${petal_radius}" length="${petal_height}"/> <!-- Измените параметры, если необходимо -->
+            <cylinder radius="${petal_radius}" length="${petal_height/4}"/> <!-- Измените параметры, если необходимо -->
         </geometry>
         <material name="orange"/>
     </visual>
     <collision>
         <geometry>
-            <cylinder radius="${petal_radius}" length="${petal_height}"/>
+            <cylinder radius="${petal_radius}" length="${petal_height/4}"/>
         </geometry>
     </collision>
-    <inertial>
-        <!-- Параметры инерции для stem -->
-        <origin xyz="0 0 0.05" rpy="0 0 0"/>
-        <mass value="0" />
-        <inertia ixx="1e-6" ixy="0.0" ixz="0.0"
-                 iyy="1e-6" iyz="0.0"
-                 izz="1e-6" />
-    </inertial>
     </link>
     
     <gazebo reference="petal_four">
@@ -445,30 +396,22 @@
     	<parent link="flower_disk"/>
     	<child link="petal_five"/>
     	<axis xyz="0 0 1"/>
- 	<origin rpy="-0.3 0 0" xyz="0 -0.4 0.05"/>
+ 	<origin rpy="-0.4 0 0" xyz="0 -0.4 0.08"/>
     	
     </joint>
         
     <link name="petal_five">
     <visual>
         <geometry>
-            <cylinder radius="${petal_radius}" length="${petal_height}"/> <!-- Измените параметры, если необходимо -->
+            <cylinder radius="${petal_radius}" length="${petal_height/4}"/> <!-- Измените параметры, если необходимо -->
         </geometry>
         <material name="white"/>
     </visual>
     <collision>
         <geometry>
-            <cylinder radius="${petal_radius}" length="${petal_height}"/>
+            <cylinder radius="${petal_radius}" length="${petal_height/4}"/>
         </geometry>
     </collision>
-    <inertial>
-        <!-- Параметры инерции для stem -->
-        <origin xyz="0 0 0.05" rpy="0 0 0"/>
-        <mass value="0" />
-        <inertia ixx="1e-6" ixy="0.0" ixz="0.0"
-                 iyy="1e-6" iyz="0.0"
-                 izz="1e-6" />
-    </inertial>
     </link>
     
     <gazebo reference="petal_five">
@@ -480,30 +423,22 @@
     	<parent link="flower_disk"/>
     	<child link="petal_six"/>
     	<axis xyz="0 0 1"/>
- 	<origin rpy="-0.2 0.2 0" xyz="-0.3 -0.3 0.05"/>
+ 	<origin rpy="-0.3 0.3 0" xyz="-0.3 -0.3 0.08"/>
     	
     </joint>
         
     <link name="petal_six">
     <visual>
         <geometry>
-            <cylinder radius="${petal_radius}" length="${petal_height}"/> <!-- Измените параметры, если необходимо -->
+            <cylinder radius="${petal_radius}" length="${petal_height/4}"/> <!-- Измените параметры, если необходимо -->
         </geometry>
         <material name="orange"/>
     </visual>
     <collision>
         <geometry>
-            <cylinder radius="${petal_radius}" length="${petal_height}"/>
+            <cylinder radius="${petal_radius}" length="${petal_height/4}"/>
         </geometry>
     </collision>
-    <inertial>
-        <!-- Параметры инерции для stem -->
-        <origin xyz="0 0 0.05" rpy="0 0 0"/>
-        <mass value="0" />
-        <inertia ixx="1e-6" ixy="0.0" ixz="0.0"
-                 iyy="1e-6" iyz="0.0"
-                 izz="1e-6" />
-    </inertial>
     </link>
     
     <gazebo reference="petal_six">
@@ -515,30 +450,22 @@
     	<parent link="flower_disk"/>
     	<child link="petal_seven"/>
     	<axis xyz="0 0 1"/>
- 	<origin rpy="-0.2 -0.2 0" xyz="0.3 -0.3 0.05"/>
+ 	<origin rpy="-0.3 -0.3 0" xyz="0.3 -0.3 0.08"/>
     	
     </joint>
         
     <link name="petal_seven">
     <visual>
         <geometry>
-            <cylinder radius="${petal_radius}" length="${petal_height}"/> <!-- Измените параметры, если необходимо -->
+            <cylinder radius="${petal_radius}" length="${petal_height/4}"/> <!-- Измените параметры, если необходимо -->
         </geometry>
         <material name="orange"/>
     </visual>
     <collision>
         <geometry>
-            <cylinder radius="${petal_radius}" length="${petal_height}"/>
+            <cylinder radius="${petal_radius}" length="${petal_height/4}"/>
         </geometry>
     </collision>
-    <inertial>
-        <!-- Параметры инерции для stem -->
-        <origin xyz="0 0 0.05" rpy="0 0 0"/>
-        <mass value="0" />
-        <inertia ixx="1e-6" ixy="0.0" ixz="0.0"
-                 iyy="1e-6" iyz="0.0"
-                 izz="1e-6" />
-    </inertial>
     </link>
     
     <gazebo reference="petal_seven">
@@ -550,30 +477,22 @@
     	<parent link="flower_disk"/>
     	<child link="petal_eight"/>
     	<axis xyz="0 0 1"/>
- 	<origin rpy="0.2 0.2 0" xyz="-0.3 0.3 0.05"/>
+ 	<origin rpy="0.3 0.3 0" xyz="-0.3 0.3 0.08"/>
     	
     </joint>
         
     <link name="petal_eight">
     <visual>
         <geometry>
-            <cylinder radius="${petal_radius}" length="${petal_height}"/> <!-- Измените параметры, если необходимо -->
+            <cylinder radius="${petal_radius}" length="${petal_height/4}"/> <!-- Измените параметры, если необходимо -->
         </geometry>
         <material name="orange"/>
     </visual>
     <collision>
         <geometry>
-            <cylinder radius="${petal_radius}" length="${petal_height}"/>
+            <cylinder radius="${petal_radius}" length="${petal_height/4}"/>
         </geometry>
     </collision>
-    <inertial>
-        <!-- Параметры инерции для stem -->
-        <origin xyz="0 0 0.05" rpy="0 0 0"/>
-        <mass value="0" />
-        <inertia ixx="1e-6" ixy="0.0" ixz="0.0"
-                 iyy="1e-6" iyz="0.0"
-                 izz="1e-6" />
-    </inertial>
     </link>
     
     <gazebo reference="petal_eight">
