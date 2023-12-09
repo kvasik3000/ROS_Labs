@@ -1,0 +1,27 @@
+[1.294s] Invoking command in '/home/kvasik/ros2_ws/src/robot_walking': PYTHONPATH=/home/kvasik/ros2_ws/src/robot_walking/build/robot_walking/prefix_override:/home/kvasik/ros2_ws/src/robot_walking/install/robot_walking/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/robot_walking build --build-base /home/kvasik/ros2_ws/src/robot_walking/build/robot_walking/build install --record /home/kvasik/ros2_ws/src/robot_walking/build/robot_walking/install.log --single-version-externally-managed
+[1.643s] running egg_info
+[1.643s] writing build/robot_walking/robot_walking.egg-info/PKG-INFO
+[1.644s] writing dependency_links to build/robot_walking/robot_walking.egg-info/dependency_links.txt
+[1.644s] writing entry points to build/robot_walking/robot_walking.egg-info/entry_points.txt
+[1.644s] writing requirements to build/robot_walking/robot_walking.egg-info/requires.txt
+[1.644s] writing top-level names to build/robot_walking/robot_walking.egg-info/top_level.txt
+[1.647s] reading manifest file 'build/robot_walking/robot_walking.egg-info/SOURCES.txt'
+[1.648s] writing manifest file 'build/robot_walking/robot_walking.egg-info/SOURCES.txt'
+[1.648s] running build
+[1.648s] running build_py
+[1.649s] copying robot_walking/depth_robot_walking.py -> /home/kvasik/ros2_ws/src/robot_walking/build/robot_walking/build/lib/robot_walking
+[1.649s] running install
+[1.649s] running install_lib
+[1.650s] copying /home/kvasik/ros2_ws/src/robot_walking/build/robot_walking/build/lib/robot_walking/depth_robot_walking.py -> /home/kvasik/ros2_ws/src/robot_walking/install/robot_walking/lib/python3.10/site-packages/robot_walking
+[1.651s] byte-compiling /home/kvasik/ros2_ws/src/robot_walking/install/robot_walking/lib/python3.10/site-packages/robot_walking/depth_robot_walking.py to depth_robot_walking.cpython-310.pyc
+[1.652s] running install_data
+[1.653s] running install_egg_info
+[1.655s] removing '/home/kvasik/ros2_ws/src/robot_walking/install/robot_walking/lib/python3.10/site-packages/robot_walking-0.0.0-py3.10.egg-info' (and everything under it)
+[1.655s] Copying build/robot_walking/robot_walking.egg-info to /home/kvasik/ros2_ws/src/robot_walking/install/robot_walking/lib/python3.10/site-packages/robot_walking-0.0.0-py3.10.egg-info
+[1.656s] running install_scripts
+[1.679s] Installing depth_robot_walking script to /home/kvasik/ros2_ws/src/robot_walking/install/robot_walking/lib/robot_walking
+[1.679s] Installing forward_walking script to /home/kvasik/ros2_ws/src/robot_walking/install/robot_walking/lib/robot_walking
+[1.680s] Installing robot_walking script to /home/kvasik/ros2_ws/src/robot_walking/install/robot_walking/lib/robot_walking
+[1.680s] Installing unique_robot_walking script to /home/kvasik/ros2_ws/src/robot_walking/install/robot_walking/lib/robot_walking
+[1.680s] writing list of installed files to '/home/kvasik/ros2_ws/src/robot_walking/build/robot_walking/install.log'
+[1.716s] Invoked command in '/home/kvasik/ros2_ws/src/robot_walking' returned '0': PYTHONPATH=/home/kvasik/ros2_ws/src/robot_walking/build/robot_walking/prefix_override:/home/kvasik/ros2_ws/src/robot_walking/install/robot_walking/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/robot_walking build --build-base /home/kvasik/ros2_ws/src/robot_walking/build/robot_walking/build install --record /home/kvasik/ros2_ws/src/robot_walking/build/robot_walking/install.log --single-version-externally-managed

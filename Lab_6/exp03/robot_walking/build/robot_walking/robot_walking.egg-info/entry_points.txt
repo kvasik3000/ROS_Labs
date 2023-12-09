@@ -1,0 +1,6 @@
+[console_scripts]
+depth_robot_walking = robot_walking.depth_robot_walking:main
+forward_walking = robot_walking.forward_walking:main
+robot_walking = robot_walking.robot_walking:main
+unique_robot_walking = robot_walking.unique_robot_walking:main
+
