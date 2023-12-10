@@ -19,7 +19,6 @@ class RobotWalking(Node):
         self.has_obstacle = False
 
     def laser_callback(self, msg):
-        # Пример: если дистанция до объекта менее 1 метра, считаем, что есть препятствие
         min_distance = min(msg.ranges)
         if min_distance < 3.0:
             self.has_obstacle = True
@@ -30,11 +29,11 @@ class RobotWalking(Node):
         twist = Twist()
 
         if self.has_obstacle:
-            twist.linear.x = 0.0   # Если есть препятствие, останавливаем линейное движение
-            twist.angular.z = 0.0  # Если есть препятствие, останавливаем вращение
+            twist.linear.x = 0.0  
+            twist.angular.z = 0.0  
         else:
-            twist.linear.x = 1.0   # Линейная скорость (задайте значение по вашему выбору)
-            twist.angular.z = 0.0  # Угловая скорость (нулевая, чтобы робот не вращался)
+            twist.linear.x = 1.0   
+            twist.angular.z = 0.0  
 
         self.publisher.publish(twist)
 
